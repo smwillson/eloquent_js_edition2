@@ -218,3 +218,28 @@ console.log(`Is 10 == '10'`);
 console.log(deepComparison(10, '10'));
 console.log(`Is 10 == 10`);
 console.log(deepComparison(10, 10));
+
+/*
+
+Output: 
+
+Is BobaFett = JangoFett?
+false
+Is obj1 == obj2 :
+false
+Is obj3 == obj4 :
+false
+Is null == obj3
+false
+Is 5 == obj3
+false
+Is null == null
+false
+Is 10 == 5
+false
+Is 10 == '10'
+false
+Is 10 == 10
+true
+
+*/
