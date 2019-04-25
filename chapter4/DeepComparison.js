@@ -57,7 +57,7 @@ function deepComparison(value1, value2) {
 
 
                         if (!(value1[property] === value2[property])) {
-                            console.log('hola!');
+                            
                             return false;
 
                         }
@@ -76,15 +76,14 @@ function deepComparison(value1, value2) {
 
                         	} else {
                             // if both values are objects, this will be our recursive call
-                            //console.log('recursive call');
+                            
                            return deepComparison(value1[property], value2[property]);
                         	}
                       }
                       else {
 
                         //if one is an object and another is not
-                        console.log('booo!');
-                        return false;
+                         return false;
 
                     }
 
@@ -223,7 +222,7 @@ console.log(deepComparison(10, 10));
 
 Output: 
 
-Is BobaFett = JangoFett?
+Is BobaFett == JangoFett?
 false
 Is obj1 == obj2 :
 false
