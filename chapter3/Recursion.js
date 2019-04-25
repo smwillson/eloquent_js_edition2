@@ -1,0 +1,41 @@
+/*
+We’ve seen that % (the remainder operator) can be used to test whether
+a number is even or odd by using % 2 to check whether it’s divisible by
+two. Here’s another way to define whether a positive whole number is
+even or odd:
+• Zero is even.
+83
+• One is odd.
+• For any other number N, its evenness is the same as N - 2.
+Define a recursive function isEven corresponding to this description. The
+function should accept a number parameter and return a Boolean.
+Test it on 50 and 75. See how it behaves on -1. Why? Can you think
+of a way to fix this?
+
+*/
+
+function isEven(num){
+
+numberToTest = Math.abs(num);
+
+if(numberToTest == 0){
+
+	return true;
+
+}else if(numberToTest == 1){
+
+
+	return false;
+
+}else{
+
+
+	numberToTest -= 2;
+
+	return(isEven(numberToTest));
+}
+
+}
+
+//console.log(`The given number is: `+ (isEven(13)) ? `even` : `odd`);
+console.log(isEven(-11));
