@@ -16,7 +16,7 @@ of a way to fix this?
 
 function isEven(num){
 
-numberToTest = Math.abs(num);
+let numberToTest = Math.abs(num);
 
 if(numberToTest == 0){
 
