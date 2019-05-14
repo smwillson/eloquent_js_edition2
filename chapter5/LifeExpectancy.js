@@ -67,6 +67,7 @@ function average(array) {
   return array.reduce(plus) / array.length;
 }
 
+//create a object array for each entry having 2 keys: century and age
 
 let lifeExpectanctObjArray = [];
 
@@ -74,15 +75,65 @@ ancestry.forEach(function(person){
 
 	let personObject = {};
 	
-	personObject.century = Math.ceil([person.died]/100);
+	personObject.century = Math.ceil([person.died]/100); //calculate century
 
-	personObject.age = (person.died - person.born);
+	personObject.age = (person.died - person.born); //calculate age
 
 	lifeExpectanctObjArray.push(personObject);
 
 
 });
 
+// how many centuries do we have now?
 
-console.log(lifeExpectanctObjArray);
+let centuryArray = [];
 
+lifeExpectanctObjArray.forEach(function(expectancyObj){
+
+	if((centuryArray.indexOf(expectancyObj.century)) == -1){
+
+		centuryArray.push(expectancyObj.century);
+	}
+
+
+});
+
+//sort our centuryArray in ascending order 
+
+centuryArray = centuryArray.sort();
+
+
+console.log(`century : average age`);
+
+
+//here we loop through the 2 arrays to calculate the average/century
+centuryArray.forEach(function(century){
+
+    let ageArr = [];
+
+	lifeExpectanctObjArray.forEach(function(lifeExpectanctObj){
+
+		if(lifeExpectanctObj.century == century){
+
+		ageArr.push(lifeExpectanctObj.age);
+		}
+	});
+
+console.log(`${century} : `+ average(ageArr).toFixed(1));
+});
+
+
+
+/*
+output
+
+century : average age
+16 : 43.5
+17 : 51.2
+18 : 52.8
+19 : 54.8
+20 : 84.7
+21 : 94.0
+
+
+*/
